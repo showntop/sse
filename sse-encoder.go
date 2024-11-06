@@ -71,7 +71,7 @@ func writeRetry(w stringWriter, retry uint) {
 }
 
 func writeData(w stringWriter, data interface{}) error {
-	w.WriteString("data:")
+	w.WriteString("data: ")
 	switch kindOfData(data) {
 	case reflect.Struct, reflect.Slice, reflect.Map:
 		err := json.NewEncoder(w).Encode(data)
